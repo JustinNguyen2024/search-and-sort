@@ -15,8 +15,19 @@ public class Insertion
    * Returns the sorted array
    */
   public static int[] sort(int[] arr) {
-    // Your algorithm goes here!
-
+    int temporary;
+    
+    for (int index = 1; index < arr.length; index++) {
+        // check first 2 values
+        if (arr[index] < arr[index - 1]) {
+            int slot = index;
+            // put lesser into temporary
+            temporary = arr[index];
+            slot = arr[index -1];
+            arr[slot - 1] = temporary;
+        }
+    }
+    return arr;
   }
   
   public static void main(String[] args) {
