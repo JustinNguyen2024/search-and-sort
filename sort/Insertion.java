@@ -20,12 +20,24 @@ public class Insertion
     for (int index = 1; index < arr.length; index++) {
         // check first 2 values
         if (arr[index] < arr[index - 1]) {
-            int slot = index;
             // put lesser into temporary
             temporary = arr[index];
-            slot = arr[index -1];
-            arr[slot - 1] = temporary;
+            // put larger where smaller used to be
+            arr[index] = arr[index - 1];
+            // bring smaller down
+            arr[index - 1] = temporary;
         }
+        
+        int sub = index;
+        while (sub <= arr.length && sub > 0){
+                if (arr[sub] < arr[sub - 1]) {
+                    temporary = arr[sub];
+                    arr[sub] = arr[index - 1];
+                    arr[sub - 1] = temporary;
+                    sub--;
+            }
+        }
+        
     }
     return arr;
   }
