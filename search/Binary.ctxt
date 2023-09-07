@@ -1,11 +1,13 @@
 #BlueJ class context
-comment0.params=arr\ target
-comment0.target=int\ search(int[],\ int)
-comment0.text=\n\ Returns\ the\ index\ of\ the\ target\ value,\ or\ -1\ if\ not\ found\n
-comment1.params=args
-comment1.target=void\ main(java.lang.String[])
-comment2.params=target\ result
-comment2.target=void\ printResult(int,\ boolean)
+comment0.target=Binary
+comment0.text=\n\ Write\ a\ description\ of\ class\ Binary\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=arr\ target
+comment1.target=int\ search(int[],\ int)
+comment1.text=\n\ Returns\ the\ index\ of\ the\ target\ value,\ or\ -1\ if\ not\ found\n
+comment2.params=args
+comment2.target=void\ main(java.lang.String[])
 comment3.params=target\ result
-comment3.target=void\ printResult(java.lang.String,\ boolean)
-numComments=4
+comment3.target=void\ printResult(int,\ boolean)
+comment4.params=target\ result
+comment4.target=void\ printResult(java.lang.String,\ boolean)
+numComments=5

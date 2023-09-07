@@ -14,19 +14,15 @@ public class Sequential
    * Returns the index of the target value, or -1 if not found
    */
   public static int search(int[] arr, int target) {
-    
+    // loop through array
     for (int index = 0; index < arr.length; index++) {
+        // check if target value found
         if (arr[index] == target) {
-        return index;
-        } else if (index == arr.length) {
-        
-            } else {
-        index++;
+            return index;
+        }
     }
-    }
-    // check if # is found
-    
-    return index;
+    // target not found
+    return -1;
   }
   
   public static void main(String[] args) {
