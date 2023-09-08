@@ -31,7 +31,7 @@ public class Insertion
                 // put lesser into temporary
                 temporary = arr[sub];
                 // put larger where smaller used to be
-                arr[sub] = arr[index - 1];
+                arr[sub] = arr[sub - 1];
                 // bring smaller down
                 arr[sub - 1] = temporary;
                 // decrement

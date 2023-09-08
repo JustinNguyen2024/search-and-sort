@@ -15,7 +15,8 @@ public class Merge
    * Returns the sorted array
    */
   public static int[] sort(int[] arr) {
-    /
+    // split apart
+    //put back together
 
   }
   

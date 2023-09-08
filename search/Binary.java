@@ -17,24 +17,23 @@ public class Binary
         int high = arr.length - 1;
         boolean targetFound = false;
         while (!targetFound) {
-            if (low <= high) {
-                int mid = (low + high) / 2;
-                if (arr[mid] == target) {
-                    targetFound = true;
-                    return mid;     
-                } else if (target < arr[mid]) {
-                    // target is in lower half
-                    high = mid;
-                    mid = (low + high) / 2;
-                } else if (target > arr[mid]) {
-                    // target is in upper half
-                    low = mid;
-                    mid = (low + high) / 2;
-                }
-                
-                if (low == high) {
-                    return -1;
-                }
+
+            int mid = (low + high) / 2;
+            if (arr[mid] == target) {
+                targetFound = true;
+                return mid;     
+            } else if (target < arr[mid]) {
+                // target is in lower half
+                high = mid;
+                mid = (low + high) / 2;
+            } else if (target > arr[mid]) {
+                // target is in upper half
+                low = mid;
+                mid = (low + high) / 2;
+            }
+
+            if (low == high) {
+                return -1;
             }
 
         }
@@ -56,7 +55,7 @@ public class Binary
                 // put lesser into temporary
                 temporary = arr[sub];
                 // put larger where smaller used to be
-                arr[sub] = arr[index - 1];
+                arr[sub] = arr[sub - 1];
                 // bring smaller down
                 arr[sub - 1] = temporary;
                 // decrement
