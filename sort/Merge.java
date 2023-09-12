@@ -10,19 +10,16 @@ import java.util.Arrays;
  */
 public class Merge
 {
-
     /**
      * Returns the sorted array
      */
     public static int[] sort(int[] arr, int lArray, int rArray) {
-        if (lArray <= rArray) {
-            int middle = (lArray + rArray) /2;
+        if (lArray < rArray-1) {
+            int middle = lArray + (rArray-lArray) / 2;
 
-            // part 1: split apart left and right arrays
             sort(arr, lArray, middle);
             sort(arr, middle, rArray);
             merge(arr, lArray, middle, rArray);
-            //////////////////
         }
         return arr;
     }
@@ -48,10 +45,10 @@ public class Merge
         }
 
         //part 2: put back together
-        int leftSize = arr.length / 2;
-        int rightSize = arr.length - leftSize;
+        int leftSize = middle - l + 1;
+        int rightSize = r - middle;
         int i = 0, l2 = 0, r2 = 0; // indices
-
+        int rightArraySize = rightArray.length;
         // merge smaller # first
         while (l2 < leftSize && r2 < rightSize) {
             if(leftArray[l2] < rightArray[r2]) {
@@ -68,12 +65,12 @@ public class Merge
         // merge last element up if only one remains
         while(l2 < leftSize) {
             arr[i] = leftArray[l2];
-            l++;
+            i++;
             l2++;
         }
         while(r2 < rightSize) {
             arr[i] = rightArray[r2];
-            l++;
+            i++;
             r++;
         }
     }
